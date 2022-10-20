@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const port = 8080;
 
 const errorController = require('./controllers/error');
@@ -44,3 +45,4 @@ mongoConnect(() => {
 });
 
 
+mongoose.connect()
