@@ -7,8 +7,7 @@ exports.getProducts = (req, res, next) => {
             res.render('shop/product-list', {
                 prods: products,
                 pageTitle: 'All Products',
-                path: '/products',
-                isAutheticated: req.session.isLoggedIn
+                path: '/products'
             });
         })
         .catch(err => {
@@ -24,8 +23,7 @@ exports.getProduct = (req, res, next) => {
             res.render('shop/product-detail', {
                 product: product,
                 pageTitle: product.title,
-                path: "/products",
-                isAutheticated: req.session.isLoggedIn
+                path: "/products"
             });
         })
         .catch(err => console.log(err));
@@ -37,8 +35,7 @@ exports.getIndex = (req, res, next) => {
             res.render('shop/index', {
                 prods: products,
                 pageTitle: 'Shop',
-                path: '/',
-                isAutheticated: req.session.isLoggedIn
+                path: '/'
             });
         })
         .catch(err => {
@@ -54,8 +51,7 @@ exports.getCart = (req, res, next) => {
             res.render('shop/cart', {
                 path: '/cart',
                 pageTitle: 'Tour Cart',
-                products: products,
-                isAutheticated: req.session.isLoggedIn
+                products: products
             });
         })
         .catch(err => console.log(err));
@@ -97,7 +93,7 @@ exports.postOrder = (req, res, next) => {
             console.log(products);
             const order = new Order({
                 user: {
-                    name: req.user.name,
+                    email: req.user.email,
                     userId: req.user
                 },
                 products: products
@@ -119,8 +115,7 @@ exports.getOrders = (req, res, next) => {
             res.render('shop/orders', {
                 pageTitle: 'Your Orders',
                 path: '/orders',
-                orders: orders,
-                isAutheticated: req.session.isLoggedIn
+                orders: orders
             });
         })
         .catch(err => console.log(err));
