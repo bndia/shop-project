@@ -35,7 +35,7 @@ const { log } = require('console');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'my secret', resave: false, saveUninitialized: false, store: store }));
+app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false, store: store }));
 app.use(csrfProtection);
 app.use(flash());
 
