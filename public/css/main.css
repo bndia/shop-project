@@ -170,7 +170,8 @@ form {
 }
 
 .card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.26);
+
 }
 
 .card__header,
@@ -259,4 +260,9 @@ form {
   .user-message {
     width: 30rem;
   }
+}
+
+body {
+  background-color: black;
+  color: white;
 }
