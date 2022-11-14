@@ -57,7 +57,7 @@ exports.postAddProduct = (req, res, next) => {
         });
     }
 
-    const imageUrl = image.path;
+    const imageUrl = image.path.toString('utf-8');
 
     const product = new Product({
         title: title,

@@ -170,7 +170,7 @@ form {
 }
 
 .card {
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
 }
 
@@ -262,7 +262,22 @@ form {
   }
 }
 
-body {
-  background-color: black;
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #00695c;
+  padding: 0.5rem;
+  border: 1px solid #00695c;
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: #00695c;
   color: white;
 }
